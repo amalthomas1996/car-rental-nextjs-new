@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="logo">
           <a href="#">
             <Image
-              src="/main-logo.svg"
+              src="/logo-diamon.svg"
               alt="Car Rental Logo"
               width={150}
               height={50}
