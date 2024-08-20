@@ -49,7 +49,11 @@ const Subscribe = () => {
               src="/playstore-button-light.svg"
               alt=""
             />
-            <img className="app-button" src="/store-button-light.svg" alt="" />
+            <img
+              className="app-button"
+              src="/store-button-light.svg"
+              alt="play store"
+            />
           </div>
         </div>
       </div>
