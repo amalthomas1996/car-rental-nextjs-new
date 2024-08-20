@@ -1,6 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
-const Booking = () => {
+const Booking: React.FC = () => {
+  const [location, setLocation] = useState("al-quoz");
+  const [pickupDate, setPickupDate] = useState("2023-10-30");
+  const [pickupTime, setPickupTime] = useState("09:00");
+  const [dropoffDate, setDropoffDate] = useState("2023-11-29");
+  const [dropoffTime, setDropoffTime] = useState("09:00");
+  const [vehicleType, setVehicleType] = useState<string>("");
+
   return (
     <div>
       <div className="booking-section">
@@ -11,9 +19,12 @@ const Booking = () => {
             <select
               id="vehicle-type"
               className="dropdown-select"
-              defaultValue={"Select vehicle type"}
+              value={vehicleType}
+              onChange={(e) => setVehicleType(e.target.value)}
             >
-              <option value={"select Vehicle Type"}>Select vehicle type</option>
+              <option value="" disabled>
+                Select vehicle type
+              </option>
               <option value="sedan">Sedan</option>
               <option value="suv">SUV</option>
               <option value="truck">Truck</option>
@@ -33,13 +44,12 @@ const Booking = () => {
               id="location"
               name="location"
               className="dropdown-select-booking"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
             >
-              <option value="al-quoz" selected>
-                Al Quoz
-              </option>
+              <option value="al-quoz">Al Quoz</option>
               <option value="downtown">Downtown</option>
               <option value="burj-khalifa">Burj Khalifa</option>
-              {/* add more options here if needed */}
             </select>
 
             <span className="dropdown-icon">
@@ -55,13 +65,15 @@ const Booking = () => {
               type="date"
               id="pickup-date"
               name="pickup-date"
-              defaultValue="2023-10-30"
+              value={pickupDate}
+              onChange={(e) => setPickupDate(e.target.value)}
             />
             <input
               type="time"
               id="pickup-time"
               name="pickup-time"
-              defaultValue="09:00"
+              value={pickupTime}
+              onChange={(e) => setPickupTime(e.target.value)}
             />
           </div>
 
@@ -73,13 +85,15 @@ const Booking = () => {
               type="date"
               id="dropoff-date"
               name="dropoff-date"
-              defaultValue="2023-11-29"
+              value={dropoffDate}
+              onChange={(e) => setDropoffDate(e.target.value)}
             />
             <input
               type="time"
               id="dropoff-time"
               name="dropoff-time"
-              defaultValue="09:00"
+              value={dropoffTime}
+              onChange={(e) => setDropoffTime(e.target.value)}
             />
           </div>
 
@@ -108,7 +122,7 @@ const Booking = () => {
           </div>
         </div>
       </div>
-      {/* <!--Booking Section for Mobile-->*/}
+      {/* Booking Section for Mobile */}
 
       <div className="mobile-hero-section">
         <div className="mobile-app-banner">
@@ -129,9 +143,13 @@ const Booking = () => {
         <div className="mobile-tab-section">
           <span className="mobile-tab active">Same as Pick-Up</span>
           <span className="mobile-tab">Different Drop-Off</span>
-          <select className="mobile-vehicle-type">
-            <option value="" disabled selected>
-              vehicle type
+          <select
+            className="mobile-vehicle-type"
+            value={vehicleType}
+            onChange={(e) => setVehicleType(e.target.value)}
+          >
+            <option value="" disabled>
+              Vehicle type
             </option>
             <option value="sedan">Sedan</option>
             <option value="suv">SUV</option>
@@ -147,10 +165,17 @@ const Booking = () => {
               alt="Location Icon"
               className="mobile-form-icon"
             />
-            <select className="mobile-select">
-              <option value="" disabled selected>
+            <select
+              className="mobile-select"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            >
+              <option value="" disabled>
                 Pickup Location
               </option>
+              <option value="al-quoz">Al Quoz</option>
+              <option value="downtown">Downtown</option>
+              <option value="burj-khalifa">Burj Khalifa</option>
             </select>
           </div>
           <div className="mobile-form-item">
@@ -159,10 +184,17 @@ const Booking = () => {
               alt="Location Icon"
               className="mobile-form-icon"
             />
-            <select className="mobile-select">
-              <option value="" disabled selected>
+            <select
+              className="mobile-select"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            >
+              <option value="" disabled>
                 Drop Off Location
               </option>
+              <option value="al-quoz">Al Quoz</option>
+              <option value="downtown">Downtown</option>
+              <option value="burj-khalifa">Burj Khalifa</option>
             </select>
           </div>
           <div className="mobile-form-item">
@@ -175,6 +207,7 @@ const Booking = () => {
               type="text"
               className="mobile-datetime-input"
               value="Pick-Up Date & Time"
+              readOnly
             />
           </div>
           <div className="mobile-form-item">
@@ -187,6 +220,7 @@ const Booking = () => {
               type="text"
               className="mobile-datetime-input"
               value="Drop-Off Date & Time"
+              readOnly
             />
           </div>
         </div>
