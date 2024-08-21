@@ -28,7 +28,6 @@ const Subscribe = () => {
           </Button>
         </form>
       </div>
-
       <div className="subscribe-right">
         <div className="phone-mockup">
           <img src="/mobile-image.svg" alt="Phone Mockup" />
@@ -77,7 +76,7 @@ const Subscribe = () => {
         </div>
         <p>Enter your number and receive a direct link to download the app</p>
         <input type="text" placeholder="Enter Phone Number" />
-        <button>Get the link</button>
+        <Button>Get the link</Button>
       </div>
     </div>
   );

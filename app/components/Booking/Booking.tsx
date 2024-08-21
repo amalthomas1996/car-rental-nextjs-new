@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 import DateTimePicker from "@/shared/DateTimePicker/DateTimePicker";
 import Button from "@/shared/Button/Button";
+import DropdownSelect from "@/shared/DropdownSelect/DropdownSelect";
 
 const Booking: React.FC = () => {
   const [location, setLocation] = useState("al-quoz");
@@ -12,6 +13,13 @@ const Booking: React.FC = () => {
   const [dropoffTime, setDropoffTime] = useState("09:00");
   const [vehicleType, setVehicleType] = useState<string>("");
 
+  const vehicleOptions = [
+    { value: "sedan", label: "Sedan" },
+    { value: "suv", label: "SUV" },
+    { value: "truck", label: "Truck" },
+    { value: "van", label: "Van" },
+  ];
+
   return (
     <div>
       <div className="booking-section">
@@ -19,20 +27,13 @@ const Booking: React.FC = () => {
           <span className="pickup-option">Same as Pick-Up</span>
           <span className="dropoff-option">Different Drop-Off</span>
           <div className="vehicle-select">
-            <select
+            <DropdownSelect
               id="vehicle-type"
-              className="dropdown-select"
+              options={vehicleOptions}
               value={vehicleType}
               onChange={(e) => setVehicleType(e.target.value)}
-            >
-              <option value="" disabled>
-                Select vehicle type
-              </option>
-              <option value="sedan">Sedan</option>
-              <option value="suv">SUV</option>
-              <option value="truck">Truck</option>
-              <option value="van">Van</option>
-            </select>
+              placeholder="Select vehicle type"
+            />
           </div>
         </div>
 
