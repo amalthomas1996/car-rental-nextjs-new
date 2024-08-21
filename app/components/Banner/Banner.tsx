@@ -1,3 +1,4 @@
+import Button from "@/shared/Button/Button";
 import React from "react";
 
 const Banner = () => {
@@ -8,7 +9,7 @@ const Banner = () => {
         <img src="/banner-1.svg" alt="Banner Image" />
         <div className="banner-content">
           <h3>
-            Recieve guarnteed <button>GIFT VOUCHER</button>
+            Recieve guarnteed <Button>GIFT VOUCHER</Button>
             <br />
             on a monthly hire or lease
           </h3>

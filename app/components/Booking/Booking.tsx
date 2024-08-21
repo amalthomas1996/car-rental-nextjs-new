@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import Button from "../Button/Button";
+
+import DateTimePicker from "@/shared/DateTimePicker/DateTimePicker";
+import Button from "@/shared/Button/Button";
 
 const Booking: React.FC = () => {
   const [location, setLocation] = useState("al-quoz");
@@ -57,46 +59,22 @@ const Booking: React.FC = () => {
               <img src="/dropdown-icon.svg" alt="" />
             </span>
           </div>
-
-          <div className="form-item">
-            <label htmlFor="pickup-date" className="icon-calendar">
-              <img src="/calender-icon.svg" alt="calendar-icon" />
-            </label>
-            <input
-              type="date"
-              id="pickup-date"
-              name="pickup-date"
-              value={pickupDate}
-              onChange={(e) => setPickupDate(e.target.value)}
-            />
-            <input
-              type="time"
-              id="pickup-time"
-              name="pickup-time"
-              value={pickupTime}
-              onChange={(e) => setPickupTime(e.target.value)}
-            />
-          </div>
-
-          <div className="form-item">
-            <label htmlFor="dropoff-date" className="icon-calendar">
-              <img src="/calender-icon.svg" alt="calendar-icon" />
-            </label>
-            <input
-              type="date"
-              id="dropoff-date"
-              name="dropoff-date"
-              value={dropoffDate}
-              onChange={(e) => setDropoffDate(e.target.value)}
-            />
-            <input
-              type="time"
-              id="dropoff-time"
-              name="dropoff-time"
-              value={dropoffTime}
-              onChange={(e) => setDropoffTime(e.target.value)}
-            />
-          </div>
+          <DateTimePicker
+            dateValue={pickupDate}
+            timeValue={pickupTime}
+            onDateChange={setPickupDate}
+            onTimeChange={setPickupTime}
+            dateId="pickup-date"
+            timeId="pickup-time"
+          />
+          <DateTimePicker
+            dateValue={dropoffDate}
+            timeValue={dropoffTime}
+            onDateChange={setDropoffDate}
+            onTimeChange={setDropoffTime}
+            dateId="dropoff-date"
+            timeId="dropoff-time"
+          />
 
           <div className="search-icon">
             <button type="submit" className="search-icon-button">
@@ -138,8 +116,8 @@ const Booking: React.FC = () => {
         </div>
 
         <div className="mobile-booking-buttons">
-          <button className="mobile-booking-button">Book a Car</button>
-          <button className="mobile-quick-book-button">Quick Book</button>
+          <Button className="mobile-booking-button">Book a Car</Button>
+          <Button className="mobile-quick-book-button">Quick Book</Button>
         </div>
 
         <div className="mobile-tab-section">
@@ -199,32 +177,31 @@ const Booking: React.FC = () => {
               <option value="burj-khalifa">Burj Khalifa</option>
             </select>
           </div>
-          <div className="mobile-form-item">
-            <img
-              src="/calender-icon.svg"
-              alt="Calendar Icon"
-              className="mobile-form-icon"
-            />
-            <input
-              type="text"
-              className="mobile-datetime-input"
-              value="Pick-Up Date & Time"
-              readOnly
-            />
-          </div>
-          <div className="mobile-form-item">
-            <img
-              src="/calender-icon.svg"
-              alt="Calendar Icon"
-              className="mobile-form-icon"
-            />
-            <input
-              type="text"
-              className="mobile-datetime-input"
-              value="Drop-Off Date & Time"
-              readOnly
-            />
-          </div>
+
+          {/* -------------- */}
+
+          <DateTimePicker
+            dateValue={pickupDate}
+            timeValue={pickupTime}
+            onDateChange={setPickupDate}
+            onTimeChange={setPickupTime}
+            dateId="pickup-date"
+            timeId="pickup-time"
+            formItemClass="mobile-form-item"
+            iconClass="Calendar Icon"
+            inputClass="mobile-datetime-input"
+          />
+          <DateTimePicker
+            dateValue={dropoffDate}
+            timeValue={dropoffTime}
+            onDateChange={setDropoffDate}
+            onTimeChange={setDropoffTime}
+            dateId="dropoff-date"
+            timeId="dropoff-time"
+            formItemClass="mobile-form-item"
+            iconClass="Calendar Icon"
+            inputClass="mobile-datetime-input"
+          />
         </div>
 
         <button className="mobile-search-button">Search</button>

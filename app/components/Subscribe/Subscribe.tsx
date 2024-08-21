@@ -1,3 +1,4 @@
+import Button from "@/shared/Button/Button";
 import React from "react";
 
 const Subscribe = () => {
@@ -22,9 +23,9 @@ const Subscribe = () => {
             Don't miss out! Enter your email and your name, then hit subscribe
             to unlock a world of special offers and details.
           </span>
-          <button type="submit" className="subscribe-button">
+          <Button type="submit" className="subscribe-button">
             Subscribe
-          </button>
+          </Button>
         </form>
       </div>
 
