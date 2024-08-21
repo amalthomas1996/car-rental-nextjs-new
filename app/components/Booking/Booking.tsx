@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Button from "../Button/Button";
 
 const Booking: React.FC = () => {
   const [location, setLocation] = useState("al-quoz");
@@ -106,9 +107,10 @@ const Booking: React.FC = () => {
           <div className="vertical-line"></div>
 
           <div className="form-item q-book">
-            <button type="submit" className="quick-book">
+            {/* <button type="submit" className="quick-book">
               Quick Book
-            </button>
+            </button> */}
+            <Button className="quick-book">Click Me</Button>
           </div>
         </form>
 

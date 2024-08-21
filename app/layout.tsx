@@ -28,14 +28,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <Booking />
-        <SideButton />
-        <Banner />
-        <PopularCarsSection />
-        <Subscribe />
-        <Steps />
-        <Location />
-        <Faq />
         <main>{children}</main>
         <Footer />
       </body>
