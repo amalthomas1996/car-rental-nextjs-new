@@ -143,7 +143,6 @@
   margin-left: 700px;
 }
 
-
 .under-text {
   font-size: 10px;
   color: #333;
@@ -151,7 +150,13 @@
   line-height: 1.5;
   text-align: center;
   opacity: 50%;
-  animation: marquee 15s linear infinite;
+  animation: marquee 13s linear infinite;
+}
+
+.under-text:hover {
+  opacity: 1;
+  color: #000000;
+  cursor: pointer;
 }
 
 @keyframes marquee {
@@ -160,14 +165,8 @@
   }
 
   to {
-    transform: translateX(-100%);
+    transform: translateX(-150%);
   }
-}
-
-.under-text:hover {
-  opacity: 1;
-  color: #000000;
-  cursor: pointer;
 }
 
 
@@ -223,7 +222,7 @@
 
     justify-content: center;
     margin: 10px 0;
-
+    padding-left: -300;
     margin-left: -700px;
   }
 }
@@ -243,7 +242,8 @@
 
   .under-text-container {
     justify-content: center;
-    margin: 10px 0;
+    margin: 10px 10px;
+
   }
 }
 
@@ -505,7 +505,7 @@
 }
 
 /* hide date time picker */
-.form-item input[type="date"]::-webkit-calendar-picker-indicator,
+/* .form-item input[type="date"]::-webkit-calendar-picker-indicator,
 .form-item input[type="time"]::-webkit-inner-spin-button {
   display: none;
 }
@@ -517,7 +517,7 @@
 
 .form-item input[type="time"]::-webkit-calendar-picker-indicator {
   display: none;
-}
+} */
 
 .q-book {
   background-color: transparent;
@@ -643,20 +643,26 @@
 .store-buttons {
   display: flex;
   gap: 10px;
+  cursor: pointer;
 }
 
 .store-buttons img {
   width: 109.87px;
   height: 32px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .store-buttons img:hover {
   transform: translateY(-2px);
+
 }
+
+/* ------------------------*/
 
 /* Bookin section for mobile View  */
 
+/* Booking section for mobile view */
 .mobile-hero-section {
   background-color: #ffffff;
   padding: 10px;
@@ -711,13 +717,11 @@
   margin: 0 10px;
 }
 
-
 /* Booking Buttons */
 .mobile-booking-buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-
 }
 
 .mobile-booking-button,
@@ -804,6 +808,22 @@
   appearance: none;
 }
 
+/* Drop-Off Location Transition */
+.dropoff-location {
+  opacity: 0;
+  height: 0;
+  margin-top: -30px;
+  /* Adjust this value as needed */
+  overflow: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease, margin-top 0.3s ease;
+}
+
+.dropoff-location.show {
+  opacity: 1;
+  height: auto;
+  margin-top: 0;
+  /* Reset to normal margin when visible */
+}
 
 /* Search Button */
 .mobile-search-button {
@@ -819,6 +839,8 @@
   cursor: pointer;
 }
 
+
+/*-----------------------*/
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .booking-section {
@@ -1083,8 +1105,6 @@
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
-
-
 }
 
 .popular-cars-section h2 {
@@ -1101,8 +1121,6 @@
   overflow-x: auto;
   scrollbar-width: none;
   padding-bottom: 15px;
-
-
 }
 
 .car-cards-container::-webkit-scrollbar {
@@ -1216,6 +1234,7 @@
   .car-image {
     width: 300px;
     height: 250px;
+    object-fit: cover;
   }
 
   .car-details h3 {
@@ -1246,6 +1265,7 @@
   .car-image {
     width: 240px;
     height: 220px;
+    object-fit: cover;
   }
 
   .car-details h3 {
@@ -1280,6 +1300,7 @@
   .car-image {
     width: 200px;
     height: 200px;
+    object-fit: cover;
   }
 
   .car-details h3 {
@@ -1314,7 +1335,8 @@
 
   .car-image {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
   }
 
   .car-details {
@@ -1331,7 +1353,8 @@
   }
 
   .car-svg-container {
-    gap: 8px;
+    gap: 2px;
+    display: flex;
   }
 
   .price-book-container {
@@ -1349,6 +1372,8 @@
     padding: 5px 10px;
   }
 }
+
+
 
 /* Subscribe Section */
 .subscribe-container {
@@ -1508,6 +1533,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .app-buttons .app-button {
@@ -1972,7 +1998,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
+
 
 .step {
   width: 348px;
@@ -1981,6 +2009,12 @@
   text-align: center;
   padding: 20px;
   border: 1px solid black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+  transform: translateY(-2px);
 }
 
 .step-icon {
@@ -2191,11 +2225,11 @@
 .faq-container {
   width: 80%;
   margin: 50px auto;
-  font-family: Arial, sans-serif;
+
 }
 
 .faq-container h2 {
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 400;
   text-align: center;
   margin-bottom: 20px;
@@ -2206,40 +2240,41 @@
   padding: 10px 0;
   cursor: pointer;
   margin-top: 20px;
-
 }
 
 .faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 19px;
   margin-bottom: 10px;
 }
 
 .faq-answer {
-  display: none;
-  font-size: 14px;
-  opacity: 80%;
-  margin-top: 10px;
+  max-height: 0;
+  overflow: hidden;
+  font-size: 12px;
+  opacity: 70%;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 .faq-item.active .faq-answer {
-  display: block;
+  max-height: 200px;
+  /* Adjust based on content */
+  opacity: 1;
 }
 
 .toggle-button {
   width: 24px;
   height: 24px;
-
 }
 
 .faq-item.active .toggle-button {
   content: url('/xicon.svg');
-
 }
+
 
 /* Footer */
 footer {
@@ -2256,7 +2291,7 @@ footer .container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  max-width: 1200px;
+
   margin: 0 auto;
   width: 100%;
   gap: 10rem;

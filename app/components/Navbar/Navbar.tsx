@@ -1,20 +1,20 @@
 "use client";
-import React, { useState } from "react";
 import Image from "next/image";
+import React, { useState } from "react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleHamburgerClick = () => {
+  const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleLinkClick = () => {
+  const closeMenu = () => {
     setMenuOpen(false);
   };
 
   return (
-    <div>
+    <>
       {/* Nav Bar */}
       <nav className="navbar">
         <div className="logo">
@@ -22,49 +22,38 @@ const Navbar = () => {
             <Image
               src="/main-logo.svg"
               alt="Car Rental Logo"
-              width={150}
-              height={50}
+              height={24}
+              width={24}
             />
           </a>
         </div>
         <div
           className={`hamburger ${menuOpen ? "menu-open" : ""}`}
-          onClick={handleHamburgerClick}
+          id="hamburger"
+          onClick={toggleMenu}
         >
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+        <ul className="nav-links">
           <li>
-            <a href="#" onClick={handleLinkClick}>
-              About
-            </a>
+            <a href="#">About</a>
           </li>
           <li>
-            <a href="#" onClick={handleLinkClick}>
-              Offers
-            </a>
+            <a href="#">Offers</a>
           </li>
           <li>
-            <a href="#" onClick={handleLinkClick}>
-              Corporate
-            </a>
+            <a href="#">Corporate</a>
           </li>
           <li>
-            <a href="#" onClick={handleLinkClick}>
-              Personal
-            </a>
+            <a href="#">Personal</a>
           </li>
           <li>
-            <a href="#" onClick={handleLinkClick}>
-              Locations
-            </a>
+            <a href="#">Locations</a>
           </li>
           <li>
-            <a href="#" onClick={handleLinkClick}>
-              Contact Us
-            </a>
+            <a href="#">Contact Us</a>
           </li>
         </ul>
         <div className="right-icons">
@@ -73,27 +62,27 @@ const Navbar = () => {
               <Image
                 src="/facebook-logo.svg"
                 alt="Facebook"
-                width={24}
-                height={24}
+                height={16}
+                width={16}
               />
             </a>
             <a href="#">
               <Image
                 src="/insta-logo.svg"
                 alt="Instagram"
-                width={24}
-                height={24}
+                height={16}
+                width={16}
               />
             </a>
             <a href="#">
-              <Image src="/x-logo.svg" alt="X" width={24} height={24} />
+              <Image src="/x-logo.svg" alt="Twitter" height={16} width={16} />
             </a>
             <a href="#">
               <Image
                 src="/linkedin-logo.svg"
                 alt="LinkedIn"
-                width={24}
-                height={24}
+                height={16}
+                width={16}
               />
             </a>
           </div>
@@ -102,10 +91,10 @@ const Navbar = () => {
               <Image
                 src="/notification-icon.svg"
                 alt="Notification"
-                width={24}
                 height={24}
+                width={24}
               />
-              {/* Uncomment the next line for dynamic notification count */}
+              {/* for dynamic notification count */}
               {/* <span className="notification-count">1</span> */}
             </div>
             <a href="#" className="profile-link">
@@ -115,46 +104,53 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
       <div
         className={`mobile-menu ${menuOpen ? "active" : ""}`}
         id="mobile-menu"
       >
         <ul className="mobile-nav-links">
           <li>
-            <a href="#" onClick={handleLinkClick}>
+            <a href="#" onClick={closeMenu}>
               About Us
             </a>
           </li>
+          <div className="mobile"></div>
           <li>
-            <a href="#" onClick={handleLinkClick}>
+            <a href="#" onClick={closeMenu}>
               Offers
             </a>
           </li>
+          <div className="mobile"></div>
           <li>
-            <a href="#" onClick={handleLinkClick}>
+            <a href="#" onClick={closeMenu}>
               Corporate
             </a>
           </li>
+          <div className="mobile"></div>
           <li>
-            <a href="#" onClick={handleLinkClick}>
+            <a href="#" onClick={closeMenu}>
               Personal
             </a>
           </li>
+          <div className="mobile"></div>
           <li>
-            <a href="#" onClick={handleLinkClick}>
+            <a href="#" onClick={closeMenu}>
               Locations
             </a>
           </li>
+          <div className="mobile"></div>
           <li>
-            <a href="#" onClick={handleLinkClick}>
-              Contact Us
+            <a href="#" onClick={closeMenu}>
+              Contact us
             </a>
           </li>
         </ul>
-        <div className="login-signup-btn" onClick={handleLinkClick}>
+        <div className="login-signup-btn" onClick={closeMenu}>
           Log In/Sign Up
         </div>
       </div>
+
       <div className="under-text-container">
         <span className="under-text">
           Sunday Pick Up/Drop-Off only at Dubai Silicon Oasis & Habtoor Grand
@@ -163,7 +159,7 @@ const Navbar = () => {
         </span>
       </div>
       {/* Nav Bar end */}
-    </div>
+    </>
   );
 };
 
