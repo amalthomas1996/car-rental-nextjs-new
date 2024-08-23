@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import style from "./Navbar.module.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,8 +17,8 @@ const Navbar = () => {
   return (
     <>
       {/* Nav Bar */}
-      <nav className="navbar">
-        <div className="logo">
+      <nav className={style.navbar}>
+        <div className={style.logo}>
           <a href="#">
             <Image
               src="/main-logo.svg"
@@ -28,15 +29,15 @@ const Navbar = () => {
           </a>
         </div>
         <div
-          className={`hamburger ${menuOpen ? "menu-open" : ""}`}
-          id="hamburger"
+          className={`${style.hamburger} ${menuOpen ? style.menu_open : ""}`}
+          id={style.hamburger}
           onClick={toggleMenu}
         >
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <ul className="nav-links">
+        <ul className={style.nav_links}>
           <li>
             <a href="#">About</a>
           </li>
@@ -56,8 +57,8 @@ const Navbar = () => {
             <a href="#">Contact Us</a>
           </li>
         </ul>
-        <div className="right-icons">
-          <div className="social-icons">
+        <div className={style.right_icons}>
+          <div className={style.social_icons}>
             <a href="#">
               <Image
                 src="/facebook-logo.svg"
@@ -86,8 +87,8 @@ const Navbar = () => {
               />
             </a>
           </div>
-          <div className="profile">
-            <div className="notification">
+          <div className={style.profile}>
+            <div className={style.notification}>
               <Image
                 src="/notification-icon.svg"
                 alt="Notification"
@@ -95,64 +96,64 @@ const Navbar = () => {
                 width={24}
               />
               {/* for dynamic notification count */}
-              {/* <span className="notification-count">1</span> */}
+              {/* <span className={style.notification_count}>1</span> */}
             </div>
-            <a href="#" className="profile-link">
-              <div className="profile-icon">J</div>
-              <span className="profile-name">John Doe</span>
+            <a href="#" className={style.profile_link}>
+              <div className={style.profile_icon}>J</div>
+              <span className={style.profile_name}>John Doe</span>
             </a>
           </div>
         </div>
       </nav>
 
       <div
-        className={`mobile-menu ${menuOpen ? "active" : ""}`}
-        id="mobile-menu"
+        className={`${style.mobile_menu} ${menuOpen ? style.active : ""}`}
+        id={style.mobile_menu}
       >
-        <ul className="mobile-nav-links">
+        <ul className={style.mobile_nav_links}>
           <li>
             <a href="#" onClick={closeMenu}>
               About Us
             </a>
           </li>
-          <div className="mobile"></div>
+          <div className={style.mobile}></div>
           <li>
             <a href="#" onClick={closeMenu}>
               Offers
             </a>
           </li>
-          <div className="mobile"></div>
+          <div className={style.mobile}></div>
           <li>
             <a href="#" onClick={closeMenu}>
               Corporate
             </a>
           </li>
-          <div className="mobile"></div>
+          <div className={style.mobile}></div>
           <li>
             <a href="#" onClick={closeMenu}>
               Personal
             </a>
           </li>
-          <div className="mobile"></div>
+          <div className={style.mobile}></div>
           <li>
             <a href="#" onClick={closeMenu}>
               Locations
             </a>
           </li>
-          <div className="mobile"></div>
+          <div className={style.mobile}></div>
           <li>
             <a href="#" onClick={closeMenu}>
               Contact us
             </a>
           </li>
         </ul>
-        <div className="login-signup-btn" onClick={closeMenu}>
+        <div className={style.login_signup_btn} onClick={closeMenu}>
           Log In/Sign Up
         </div>
       </div>
 
-      <div className="under-text-container">
-        <span className="under-text">
+      <div className={style.under_text_container}>
+        <span className={style.under_text}>
           Sunday Pick Up/Drop-Off only at Dubai Silicon Oasis & Habtoor Grand
           Sales Counters | All Rates inclusive of VAT. T&C's apply | Follow us
           on Social Media for New Offers

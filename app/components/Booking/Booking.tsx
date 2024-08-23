@@ -1,11 +1,13 @@
 "use client";
 import React, { useState } from "react";
+import style from "./Booking.module.css";
 import DateTimePicker from "@/shared/DateTimePicker/DateTimePicker";
 import Button from "@/shared/Button/Button";
 import DropdownSelect from "@/shared/DropdownSelect/DropdownSelect";
 
 const Booking: React.FC = () => {
   const [location, setLocation] = useState("al-quoz");
+  const [destinationLocation, setDestinationLocation] = useState("al-quoz");
   const [pickupDate, setPickupDate] = useState("2023-10-30");
   const [pickupTime, setPickupTime] = useState("09:00");
   const [dropoffDate, setDropoffDate] = useState("2023-11-29");
@@ -30,21 +32,25 @@ const Booking: React.FC = () => {
 
   return (
     <div>
-      <div className="booking-section">
-        <div className="location-select">
+      <div className={style.booking_section}>
+        <div className={style.location_select}>
           <span
-            className={`pickup-option ${isSamePickup ? "active" : ""}`}
+            className={`${style.pickup_option} ${
+              isSamePickup ? style.active : ""
+            }`}
             onClick={handleSamePickupClick}
           >
             Same as Pick-Up
           </span>
           <span
-            className={`dropoff-option ${!isSamePickup ? "active" : ""}`}
+            className={`${style.dropoff_option} ${
+              !isSamePickup ? style.active : ""
+            }`}
             onClick={handleDifferentDropoffClick}
           >
             Different Drop-Off
           </span>
-          <div className="vehicle-select">
+          <div className={style.vehicle_select}>
             <DropdownSelect
               id="vehicle-type"
               options={vehicleOptions}
@@ -56,16 +62,16 @@ const Booking: React.FC = () => {
         </div>
 
         {/* Booking Form */}
-        <form className="booking-form">
-          <div className="form-item">
-            <label htmlFor="location" className="icon-location">
+        <form className={style.booking_form}>
+          <div className={style.form_item}>
+            <label htmlFor="location" className={style.icon_location}>
               <img src="/location-icon.svg" alt="location-icon" />
             </label>
 
             <select
-              id="location"
+              id="plocation"
               name="location"
-              className="dropdown-select-booking"
+              className={style.dropdown_select_booking}
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             >
@@ -73,11 +79,34 @@ const Booking: React.FC = () => {
               <option value="downtown">Downtown</option>
               <option value="burj-khalifa">Burj Khalifa</option>
             </select>
-
-            <span className="dropdown-icon">
+            <span className={style.dropdown_icon}>
               <img src="/dropdown-icon.svg" alt="" />
             </span>
           </div>
+
+          {!isSamePickup && (
+            <div className={style.form_item}>
+              <label htmlFor="location" className={style.icon_location}>
+                <img src="/location-icon.svg" alt="location-icon" />
+              </label>
+
+              <select
+                id="destinationLocation"
+                name="location"
+                className={style.dropdown_select_booking}
+                value={destinationLocation}
+                onChange={(e) => setDestinationLocation(e.target.value)}
+              >
+                <option value="al-quoz">Al Quoz</option>
+                <option value="downtown">Downtown</option>
+                <option value="burj-khalifa">Burj Khalifa</option>
+              </select>
+
+              <span className={style.dropdown_icon}>
+                <img src="/dropdown-icon.svg" alt="" />
+              </span>
+            </div>
+          )}
           <DateTimePicker
             dateValue={pickupDate}
             timeValue={pickupTime}
@@ -85,36 +114,39 @@ const Booking: React.FC = () => {
             onTimeChange={setPickupTime}
             dateId="pickup-date"
             timeId="pickup-time"
+            formItemClass={style.form_item}
+            iconClass={style.icon_calendar}
+            inputClass={style.datetime_input}
           />
-          {!isSamePickup && (
-            <DateTimePicker
-              dateValue={dropoffDate}
-              timeValue={dropoffTime}
-              onDateChange={setDropoffDate}
-              onTimeChange={setDropoffTime}
-              dateId="dropoff-date"
-              timeId="dropoff-time"
-            />
-          )}
-
-          <div className="search-icon">
-            <button type="submit" className="search-icon-button">
+          <DateTimePicker
+            dateValue={dropoffDate}
+            timeValue={dropoffTime}
+            onDateChange={setDropoffDate}
+            onTimeChange={setDropoffTime}
+            dateId="dropoff-date"
+            timeId="dropoff-time"
+            formItemClass={style.form_item}
+            iconClass={style.icon_calendar}
+            inputClass={style.datetime_input}
+          />
+          <div className={style.search_icon}>
+            <button type="submit" className={style.search_icon_button}>
               <img src="/search-line-icon.svg" alt="search icon" />
             </button>
           </div>
 
-          <div className="vertical-line"></div>
+          <div className={style.vertical_line}></div>
 
-          <div className="form-item q-book">
-            <Button className="quick-book">Quick Book</Button>
+          <div className={`${style.form_item} ${style.q_book}`}>
+            <Button className={style.quick_book}>Quick Book</Button>
           </div>
         </form>
 
-        <div className="app-download">
+        <div className={style.app_download}>
           <span>
             Download our App for easy accessibility anytime, anywhere!
           </span>
-          <div className="store-buttons">
+          <div className={style.store_buttons}>
             <img src="/app-store-button.svg" alt="App Store" />
             <img src="/play-store-button.svg" alt="Google Play" />
           </div>
@@ -122,37 +154,41 @@ const Booking: React.FC = () => {
       </div>
 
       {/* Booking Section for Mobile */}
-      <div className="mobile-hero-section">
-        <div className="mobile-app-banner">
-          <div className="mobile-app-banner-text">
+      <div className={style.mobile_hero_section}>
+        <div className={style.mobile_app_banner}>
+          <div className={style.mobile_app_banner_text}>
             Download our App for easy Accessibility Anytime, Anywhere!
           </div>
-          <div className="mobile-app-store-buttons">
+          <div className={style.mobile_app_store_buttons}>
             <img src="/app-store-button.svg" alt="App Store" />
             <img src="/play-store-button.svg" alt="Google Play" />
           </div>
         </div>
 
-        <div className="mobile-booking-buttons">
-          <Button className="mobile-booking-button">Book a Car</Button>
-          <Button className="mobile-quick-book-button">Quick Book</Button>
+        <div className={style.mobile_booking_buttons}>
+          <Button className={style.mobile_booking_button}>Book a Car</Button>
+          <Button className={style.mobile_quick_book_button}>Quick Book</Button>
         </div>
 
-        <div className="mobile-tab-section">
+        <div className={style.mobile_tab_section}>
           <span
-            className={`mobile-tab ${isSamePickup ? "active" : ""}`}
+            className={`${style.mobile_tab} ${
+              isSamePickup ? style.active : ""
+            }`}
             onClick={handleSamePickupClick}
           >
             Same as Pick-Up
           </span>
           <span
-            className={`mobile-tab ${!isSamePickup ? "active" : ""}`}
+            className={`${style.mobile_tab} ${
+              !isSamePickup ? style.active : ""
+            }`}
             onClick={handleDifferentDropoffClick}
           >
             Different Drop-Off
           </span>
           <select
-            className="mobile-vehicle-type"
+            className={style.mobile_vehicle_type}
             value={vehicleType}
             onChange={(e) => setVehicleType(e.target.value)}
           >
@@ -166,15 +202,15 @@ const Booking: React.FC = () => {
           </select>
         </div>
 
-        <div className="mobile-form-section">
-          <div className="mobile-form-item">
+        <div className={style.mobile_form_section}>
+          <div className={style.mobile_form_item}>
             <img
               src="/location-icon.svg"
               alt="Location Icon"
-              className="mobile-form-icon"
+              className={style.mobile_form_icon}
             />
             <select
-              className="mobile-select"
+              className={style.mobile_select}
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             >
@@ -187,14 +223,14 @@ const Booking: React.FC = () => {
             </select>
           </div>
           {!isSamePickup && (
-            <div className="mobile-form-item">
+            <div className={style.mobile_form_item}>
               <img
                 src="/location-icon.svg"
                 alt="Location Icon"
-                className="mobile-form-icon"
+                className={style.mobile_form_icon}
               />
               <select
-                className="mobile-select"
+                className={style.mobile_select}
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
               >
@@ -214,9 +250,9 @@ const Booking: React.FC = () => {
             onTimeChange={setPickupTime}
             dateId="pickup-date"
             timeId="pickup-time"
-            formItemClass="mobile-form-item"
-            iconClass="Calendar Icon"
-            inputClass="mobile-datetime-input"
+            formItemClass={style.mobile_form_item}
+            iconClass={style.icon_calendar}
+            inputClass={style.mobile_datetime_input}
           />
           <DateTimePicker
             dateValue={dropoffDate}
@@ -225,13 +261,13 @@ const Booking: React.FC = () => {
             onTimeChange={setDropoffTime}
             dateId="dropoff-date"
             timeId="dropoff-time"
-            formItemClass="mobile-form-item"
-            iconClass="Calendar Icon"
-            inputClass="mobile-datetime-input"
+            formItemClass={style.mobile_form_item}
+            iconClass={style.icon_calendar}
+            inputClass={style.mobile_datetime_input}
           />
         </div>
 
-        <button className="mobile-search-button">Search</button>
+        <button className={style.mobile_search_button}>Search</button>
       </div>
     </div>
   );
