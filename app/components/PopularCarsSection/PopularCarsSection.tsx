@@ -8,6 +8,26 @@ const PopularCarsSection = () => {
 
       <div className="car-cards-container">
         <PopularCar
+          carImage="/rolls-car.webp"
+          carName="Rolls Royce Ghost"
+          description="Pure expression. Ghost presents a world of boundless potential. Its purity liberates the imagination, inviting you to craft a motor car that is a complete ..."
+          people="6"
+          transmission="Automatic"
+          doors="5"
+          ac="AC"
+          price="AED 2700/ Monthly"
+        />
+        <PopularCar
+          carImage="defender-car.avif"
+          carName="Land Rover Defender"
+          description="The Defender is a 5 seater 8 cylinder car and has length of 5018 mm, width of 2105 mm and a wheelbase of 3022 mm"
+          people="6"
+          transmission="Automatic"
+          doors="5"
+          ac="AC"
+          price="AED 2700/ Monthly"
+        />
+        <PopularCar
           carImage="/car-image-1.svg"
           carName="Mitsubishi Eclipse"
           description="Eclipse Cross is a fusion of sharp coupe looks and dynamic SUV mobility with signature Mitsubishi styling, technology, and driving confidence."
@@ -18,10 +38,9 @@ const PopularCarsSection = () => {
           price="AED 2700/ Monthly"
         />
         <PopularCar
-          carImage="/car-image-2.svg"
-          carName="Jac J7"
-          description="S3 Plus has been rated Five-Star in C-NCAP including front impact, side impact, frontal side impact &
-            Whipping test."
+          carImage="/toyota.webp"
+          carName="Toyota Prado"
+          description="Toyota Land Cruiser Prado is a seven-seater, four-wheel drive SUV that's designed for adventure. It has a luxurious interior, a distinctive grille."
           people="6"
           transmission="Automatic"
           doors="5"
@@ -29,9 +48,9 @@ const PopularCarsSection = () => {
           price="AED 2700/ Monthly"
         />
         <PopularCar
-          carImage="/car-image-1.svg"
-          carName="Mitsubishi Eclipse"
-          description="Eclipse Cross is a fusion of sharp coupe looks and dynamic SUV mobility with signature Mitsubishi styling, technology, and driving confidence."
+          carImage="/tesla-car.webp"
+          carName="Tesla Model 3"
+          description="Model 3 is designed for electric-powered performance, with quick acceleration, long range and fast charging."
           people="6"
           transmission="Automatic"
           doors="5"

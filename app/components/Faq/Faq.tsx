@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from "react";
+
 interface FaqItemProps {
   question: string;
   answer: string;
 }
+
 const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
   const [isActive, setIsActive] = useState(false);
 

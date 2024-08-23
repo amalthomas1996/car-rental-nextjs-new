@@ -660,7 +660,6 @@
 
 /* ------------------------*/
 
-/* Bookin section for mobile View  */
 
 /* Booking section for mobile view */
 .mobile-hero-section {
@@ -1223,6 +1222,8 @@
   background-color: #d30000;
   transform: translateY(-2px);
 }
+
+
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
