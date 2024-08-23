@@ -1,4 +1,5 @@
 import React from "react";
+import style from "./Popularcars.module.css";
 
 interface PopularCarProps {
   carImage: string;
@@ -10,6 +11,7 @@ interface PopularCarProps {
   ac: string;
   price: string;
 }
+
 const PopularCar: React.FC<PopularCarProps> = ({
   carImage,
   carName,
@@ -23,34 +25,42 @@ const PopularCar: React.FC<PopularCarProps> = ({
   return (
     <div>
       {/* Card */}
-      <div className="car-card">
-        <img src={carImage} alt="Car Image" className="car-image" />
-        <div className="car-details">
+      <div className={style.car_card}>
+        <img src={carImage} alt="Car Image" className={style.car_image} />
+        <div className={style.car_details}>
           <h3>{carName}</h3>
           <p>{description}</p>
-          <div className="car-svg-container">
-            <div className="car-svg-item">
-              <img src="/seat-icon.svg" alt="seat-icon" className="car-svg" />
+          <div className={style.car_svg_container}>
+            <div className={style.car_svg_item}>
+              <img
+                src="/seat-icon.svg"
+                alt="seat-icon"
+                className={style.car_svg}
+              />
               <span>{people} People</span>
             </div>
-            <div className="car-svg-item">
+            <div className={style.car_svg_item}>
               <img
                 src="/trasmisionn-icon.svg"
                 alt="trasmisionn-icon"
-                className="car-svg"
+                className={style.car_svg}
               />
               <span>{transmission}</span>
             </div>
-            <div className="car-svg-item">
-              <img src="/door-icon.svg" alt="door-icon" className="car-svg" />
+            <div className={style.car_svg_item}>
+              <img
+                src="/door-icon.svg"
+                alt="door-icon"
+                className={style.car_svg}
+              />
               <span>{doors} Doors</span>
             </div>
-            <div className="car-svg-item">
-              <img src="/ac-icon.svg" alt="ac-icon" className="car-svg" />
+            <div className={style.car_svg_item}>
+              <img src="/ac-icon.svg" alt="ac-icon" className={style.car_svg} />
               <span>{ac}</span>
             </div>
           </div>
-          <div className="price-book-container">
+          <div className={style.price_book_container}>
             <span>{price}</span>
             <button>Book Now</button>
           </div>

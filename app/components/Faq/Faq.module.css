@@ -1,0 +1,52 @@
+/* FAQ Section */
+.faq_container {
+  width: 80%;
+  margin: 50px auto;
+}
+
+.faq_container h2 {
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.faq_item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.faq_question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  margin-bottom: 10px;
+}
+
+.faq_answer {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 12px;
+  opacity: 70%;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.faq_item.active .faq_answer {
+  max-height: 200px;
+  /* Adjust based on content */
+  opacity: 1;
+}
+
+.toggle_button {
+  width: 24px;
+  height: 24px;
+}
+
+.faq_item.active .toggle_button {
+  content: url('/xicon.svg');
+}

@@ -1,12 +1,13 @@
 import React from "react";
 import PopularCar from "./PopularCars";
+import style from "./Popularcars.module.css";
 
 const PopularCarsSection = () => {
   return (
-    <div className="popular-cars-section">
+    <div className={style.popular_cars_section}>
       <h2>Most Popular Cars</h2>
 
-      <div className="car-cards-container">
+      <div className={style.car_cards_container}>
         <PopularCar
           carImage="/rolls-car.webp"
           carName="Rolls Royce Ghost"

@@ -25,7 +25,7 @@ const DropdownSelect: React.FC<DropdownSelectProps> = ({
   return (
     <select
       id={id}
-      className={`dropdown-select ${className}`}
+      className={`dropdown_select ${className}`}
       value={value}
       onChange={onChange}
     >

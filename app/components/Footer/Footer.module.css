@@ -1,0 +1,386 @@
+/* Footer */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 337px;
+  justify-content: space-between;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+  width: 100%;
+  gap: 10rem;
+}
+
+.footer .logo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  margin-top: -50px;
+}
+
+.footer .logo img {
+  height: 150px;
+  margin-bottom: 1px;
+}
+
+.footer .logo p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: center;
+}
+
+.footer .nav_and_companies {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+  width: 100%;
+}
+
+.footer .nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.footer .nav_section {
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+  margin: 10px 0;
+}
+
+.footer .nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 5px 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.footer .companies {
+  width: 100%;
+  text-align: left;
+}
+
+.footer .companies h3 {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer .companies a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  margin: 5px 10px 5px 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.footer .social_links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.footer .social_links p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.footer .social_links .icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social_links .icons a {
+  display: inline-block;
+}
+
+.social_links .icons img {
+  height: 17px;
+  width: auto;
+}
+
+.social_links .security_icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social_links .security_icons img {
+  height: 30px;
+  width: auto;
+}
+
+.footer .footer_bottom {
+  text-align: center;
+  padding-top: 20px;
+  width: 100%;
+  background-color: #000;
+}
+
+.footer .footer_bottom hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #fff;
+  margin-bottom: 10px;
+}
+
+.footer .footer_bottom p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 768px) {
+
+  .footer .container,
+  .footer_bottom,
+  .footer {
+    display: none;
+  }
+
+  .footer .logo,
+  .footer .nav_and_companies,
+  .footer .social_links {
+    text-align: center;
+  }
+
+  .footer .nav {
+    flex-direction: column;
+  }
+
+  .footer .nav_section {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer .nav_section a {
+    width: 22%;
+    margin: 5px 0;
+  }
+
+  .footer .companies {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer .companies a {
+    display: block;
+    text-align: center;
+    margin: 5px;
+    width: calc(33.33% - 10px);
+  }
+
+  @media (max-width: 480px) {
+    footer .companies a {
+      width: calc(50% - 10px);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer .logo img {
+    height: 100px;
+  }
+
+  .footer .logo p {
+    font-size: 10px;
+  }
+
+  .footer .nav_section a,
+  .footer .companies a {
+    font-size: 12px;
+  }
+
+  .footer .social_links .icons img {
+    height: 15px;
+  }
+
+  .footer .social_links .security_icons img {
+    height: 25px;
+  }
+
+  .footer .footer_bottom p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .mobile_footer_footer {
+    display: none;
+  }
+}
+
+/* Mobile Footer */
+.mobile_footer_footer {
+  background-color: #F6F7F9;
+  color: #000000;
+  padding: 0;
+}
+
+.mobile_footer_footer.dark {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+.mobile_footer_container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mobile_footer_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile_footer_logo {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 30px;
+}
+
+.mobile_footer_logo_image {
+  display: inline-block;
+}
+
+.mobile_footer_logo_text {
+  font-size: 8px;
+  margin: 0;
+  text-align: left;
+  margin-top: 35px;
+  margin-left: 10px;
+}
+
+.mobile_footer_social_icons {
+  display: flex;
+  gap: 15px;
+  margin-right: 30px;
+}
+
+.mobile_footer_social_icon {
+  height: 16px;
+}
+
+.mobile_footer_nav_and_companies {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mobile_footer_nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #F6F7F9;
+}
+
+.mobile_footer_nav_section {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile_footer_nav_link {
+  color: #000000;
+  text-decoration: none;
+  margin: 5px 0;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.mobile_footer_companies {
+  text-align: center;
+  padding: 30px;
+}
+
+.mobile_footer_companies_heading {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mobile_footer_companies_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.mobile_footer_companies_link {
+  text-decoration: none;
+  margin: 5px 10px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.mobile_footer_social_text {
+  margin-bottom: 10px;
+}
+
+.mobile_footer_security_icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mobile_footer_security_icons img {
+  width: 59px;
+}
+
+.mobile_footer_bottom {
+  text-align: center;
+}
+
+.mobile_footer_divider {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.mobile_footer_copyright {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 17px;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.mobile_footer_light {
+  color: #000000;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.mobile_footer_black {
+  color: #ffffff;
+  background-color: #000000;
+  width: 100%;
+}

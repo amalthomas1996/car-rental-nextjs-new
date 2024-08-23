@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import style from "./Faq.module.css";
 
 interface FaqItemProps {
   question: string;
@@ -14,17 +15,17 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer }) => {
   };
 
   return (
-    <div className={`faq-item ${isActive ? "active" : ""}`}>
-      <div className="faq-question" onClick={handleToggle}>
+    <div className={`${style.faq_item} ${isActive ? style.active : ""}`}>
+      <div className={style.faq_question} onClick={handleToggle}>
         <span>{question}</span>
         <img
           src={isActive ? "/xicon.svg" : "/+icon.svg"}
           alt={isActive ? "close" : "open"}
-          className="toggle-button"
+          className={style.toggle_button}
         />
       </div>
       {isActive && (
-        <div className="faq-answer">
+        <div className={style.faq_answer}>
           <p>{answer}</p>
         </div>
       )}
@@ -67,7 +68,7 @@ const Faq = () => {
   ];
 
   return (
-    <section className="faq-container">
+    <section className={style.faq_container}>
       <h2>Frequently Asked Questions</h2>
       {faqData.map((faq, index) => (
         <FaqItem key={index} question={faq.question} answer={faq.answer} />

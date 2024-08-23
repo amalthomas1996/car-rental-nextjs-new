@@ -4,6 +4,8 @@ import style from "./Booking.module.css";
 import DateTimePicker from "@/shared/DateTimePicker/DateTimePicker";
 import Button from "@/shared/Button/Button";
 import DropdownSelect from "@/shared/DropdownSelect/DropdownSelect";
+import Image from "next/image";
+import Link from "next/link";
 
 const Booking: React.FC = () => {
   const [location, setLocation] = useState("al-quoz");
@@ -52,6 +54,7 @@ const Booking: React.FC = () => {
           </span>
           <div className={style.vehicle_select}>
             <DropdownSelect
+              className={style.vehicle_type}
               id="vehicle-type"
               options={vehicleOptions}
               value={vehicleType}
@@ -65,7 +68,12 @@ const Booking: React.FC = () => {
         <form className={style.booking_form}>
           <div className={style.form_item}>
             <label htmlFor="location" className={style.icon_location}>
-              <img src="/location-icon.svg" alt="location-icon" />
+              <Image
+                src="/location-icon.svg"
+                alt="location-icon"
+                height={14}
+                width={14}
+              />
             </label>
 
             <select
@@ -80,14 +88,19 @@ const Booking: React.FC = () => {
               <option value="burj-khalifa">Burj Khalifa</option>
             </select>
             <span className={style.dropdown_icon}>
-              <img src="/dropdown-icon.svg" alt="" />
+              <Image src="/dropdown-icon.svg" alt="" height={14} width={14} />
             </span>
           </div>
 
           {!isSamePickup && (
             <div className={style.form_item}>
               <label htmlFor="location" className={style.icon_location}>
-                <img src="/location-icon.svg" alt="location-icon" />
+                <Image
+                  src="/location-icon.svg"
+                  alt="location-icon"
+                  height={14}
+                  width={14}
+                />
               </label>
 
               <select
@@ -103,7 +116,7 @@ const Booking: React.FC = () => {
               </select>
 
               <span className={style.dropdown_icon}>
-                <img src="/dropdown-icon.svg" alt="" />
+                <Image src="/dropdown-icon.svg" alt="" height={14} width={14} />
               </span>
             </div>
           )}
@@ -131,7 +144,12 @@ const Booking: React.FC = () => {
           />
           <div className={style.search_icon}>
             <button type="submit" className={style.search_icon_button}>
-              <img src="/search-line-icon.svg" alt="search icon" />
+              <Image
+                src="/search-line-icon.svg"
+                alt="search icon"
+                height={24}
+                width={24}
+              />
             </button>
           </div>
 
@@ -147,8 +165,18 @@ const Booking: React.FC = () => {
             Download our App for easy accessibility anytime, anywhere!
           </span>
           <div className={style.store_buttons}>
-            <img src="/app-store-button.svg" alt="App Store" />
-            <img src="/play-store-button.svg" alt="Google Play" />
+            <Image
+              src="/app-store-button.svg"
+              alt="App Store"
+              height={14}
+              width={14}
+            />
+            <Image
+              src="/play-store-button.svg"
+              alt="Google Play"
+              height={14}
+              width={14}
+            />
           </div>
         </div>
       </div>
@@ -160,8 +188,18 @@ const Booking: React.FC = () => {
             Download our App for easy Accessibility Anytime, Anywhere!
           </div>
           <div className={style.mobile_app_store_buttons}>
-            <img src="/app-store-button.svg" alt="App Store" />
-            <img src="/play-store-button.svg" alt="Google Play" />
+            <Image
+              src="/app-store-button.svg"
+              alt="App Store"
+              height={14}
+              width={14}
+            />
+            <Image
+              src="/play-store-button.svg"
+              alt="Google Play"
+              height={14}
+              width={14}
+            />
           </div>
         </div>
 
@@ -204,10 +242,12 @@ const Booking: React.FC = () => {
 
         <div className={style.mobile_form_section}>
           <div className={style.mobile_form_item}>
-            <img
+            <Image
               src="/location-icon.svg"
               alt="Location Icon"
               className={style.mobile_form_icon}
+              height={14}
+              width={14}
             />
             <select
               className={style.mobile_select}
@@ -224,10 +264,12 @@ const Booking: React.FC = () => {
           </div>
           {!isSamePickup && (
             <div className={style.mobile_form_item}>
-              <img
+              <Image
                 src="/location-icon.svg"
                 alt="Location Icon"
                 className={style.mobile_form_icon}
+                height={14}
+                width={14}
               />
               <select
                 className={style.mobile_select}
