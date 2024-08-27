@@ -1,5 +1,7 @@
 import React from "react";
 import style from "./Footer.module.css";
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -7,7 +9,12 @@ const Footer = () => {
       <footer className={style.footer}>
         <div className={style.container}>
           <div className={style.logo}>
-            <img src="/logo-footer.svg" alt="Al Habtoor Logo" />
+            <Image
+              src="/logo-footer.svg"
+              alt="Al Habtoor Logo"
+              height={150}
+              width={150}
+            />
             <p>
               Member of the
               <br /> Al Habtoor Group
@@ -16,56 +23,91 @@ const Footer = () => {
           <div className={style.nav_and_companies}>
             <div className={style.nav}>
               <div className={style.nav_section}>
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Services</a>
-                <a href="#">Offers</a>
+                <Link href="#">Home</Link>
+                <Link href="#">About Us</Link>
+                <Link href="#">Services</Link>
+                <Link href="#">Offers</Link>
               </div>
               <div className={style.nav_section}>
-                <a href="#">Locations</a>
-                <a href="#">Contact Us</a>
-                <a href="#">FAQ</a>
-                <a href="#">Privacy Policy</a>
+                <Link href="#">Locations</Link>
+                <Link href="#">Contact Us</Link>
+                <Link href="#">FAQ</Link>
+                <Link href="#">Privacy Policy</Link>
               </div>
               <div className={style.nav_section}>
-                <a href="#">Service Request</a>
-                <a href="#">Career</a>
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Sitemap</a>
+                <Link href="#">Service Request</Link>
+                <Link href="#">Career</Link>
+                <Link href="#">Terms & Conditions</Link>
+                <Link href="#">Sitemap</Link>
               </div>
             </div>
             <div className={style.companies}>
               <h3>Al Habtoor Companies</h3>
-              <a href="#">Hospitality</a>
-              <a href="#">Real Estate</a>
-              <a href="#">Publishing</a>
-              <a href="#">Automotive</a>
-              <a href="#">Vehicle Leasing</a>
+              <Link href="#">Hospitality</Link>
+              <Link href="#">Real Estate</Link>
+              <Link href="#">Publishing</Link>
+              <Link href="#">Automotive</Link>
+              <Link href="#">Vehicle Leasing</Link>
             </div>
           </div>
 
           <div className={style.social_links}>
             <p>FOLLOW US ON</p>
             <div className={style.icons}>
-              <a href="#">
-                <img src="/facebook-footer.svg" alt="Facebook" />
-              </a>
-              <a href="#">
-                <img src="/x-footer.svg" alt="X_icon" />
-              </a>
-              <a href="#">
-                <img src="/insta-footer.svg" alt="Instagram" />
-              </a>
-              <a href="#">
-                <img src="/linkedin-footer.svg" alt="LinkedIn" />
-              </a>
-              <a href="#">
-                <img src="/youtube-footer.svg" alt="YouTube" />
-              </a>
+              <Link href="#">
+                <Image
+                  src="/facebook-footer.svg"
+                  alt="Facebook"
+                  height={14}
+                  width={14}
+                />
+              </Link>
+              <Link href="#">
+                <Image
+                  src="/x-footer.svg"
+                  alt="X_icon"
+                  height={14}
+                  width={14}
+                />
+              </Link>
+              <Link href="#">
+                <Image
+                  src="/insta-footer.svg"
+                  alt="Instagram"
+                  height={14}
+                  width={14}
+                />
+              </Link>
+              <Link href="#">
+                <Image
+                  src="/linkedin-footer.svg"
+                  alt="LinkedIn"
+                  height={14}
+                  width={14}
+                />
+              </Link>
+              <Link href="#">
+                <Image
+                  src="/youtube-footer.svg"
+                  alt="YouTube"
+                  height={14}
+                  width={14}
+                />
+              </Link>
             </div>
             <div className={style.security_icons}>
-              <img src="/site-lock-logo.svg" alt="Sitelock Icon" />
-              <img src="/secure-logo.svg" alt="Trust Sign Icon" />
+              <Image
+                src="/site-lock-logo.svg"
+                alt="Sitelock Icon"
+                height={14}
+                width={14}
+              />
+              <Image
+                src="/secure-logo.svg"
+                alt="Trust Sign Icon"
+                height={14}
+                width={14}
+              />
             </div>
           </div>
         </div>
@@ -84,9 +126,11 @@ const Footer = () => {
         <div className={style.mobile_footer_container}>
           <div className={style.mobile_footer_top}>
             <div className={style.mobile_footer_logo}>
-              <img
+              <Image
                 src="/logo-alhabtoor.svg"
                 alt="Al Habtoor Logo"
+                height={70}
+                width={70}
                 className={style.mobile_footer_logo_image}
               />
               <p className={style.mobile_footer_logo_text}>
@@ -96,41 +140,51 @@ const Footer = () => {
               </p>
             </div>
             <div className={style.mobile_footer_social_icons}>
-              <a href="#">
-                <img
+              <Link href="#">
+                <Image
                   src="/facbook-mobile-footer.svg"
                   alt="Facebook"
+                  height={17}
+                  width={17}
                   className={style.mobile_footer_social_icon}
                 />
-              </a>
-              <a href="#">
-                <img
+              </Link>
+              <Link href="#">
+                <Image
                   src="/x-mobile-footer.svg"
                   alt="X _Twitter"
+                  height={17}
+                  width={17}
                   className={style.mobile_footer_social_icon}
                 />
-              </a>
-              <a href="#">
-                <img
+              </Link>
+              <Link href="#">
+                <Image
                   src="/insta-mobile-footer.svg"
                   alt="Instagram"
+                  height={17}
+                  width={17}
                   className={style.mobile_footer_social_icon}
                 />
-              </a>
-              <a href="#">
-                <img
+              </Link>
+              <Link href="#">
+                <Image
                   src="/linkedin-mobile-footer.svg"
                   alt="LinkedIn"
+                  height={17}
+                  width={17}
                   className={style.mobile_footer_social_icon}
                 />
-              </a>
-              <a href="#">
-                <img
+              </Link>
+              <Link href="#">
+                <Image
                   src="/youtube-mobilr-footer.svg"
                   alt="YouTube"
+                  height={17}
+                  width={17}
                   className={style.mobile_footer_social_icon}
                 />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -139,32 +193,32 @@ const Footer = () => {
             <div className={style.mobile_footer_nav_and_companies}>
               <div className={style.mobile_footer_nav}>
                 <div className={style.mobile_footer_nav_section}>
-                  <a href="#" className={style.mobile_footer_nav_link}>
+                  <Link href="#" className={style.mobile_footer_nav_link}>
                     Home
-                  </a>
-                  <a href="#" className={style.mobile_footer_nav_link}>
+                  </Link>
+                  <Link href="#" className={style.mobile_footer_nav_link}>
                     Offers
-                  </a>
-                  <a href="#" className={style.mobile_footer_nav_link}>
+                  </Link>
+                  <Link href="#" className={style.mobile_footer_nav_link}>
                     Career
-                  </a>
-                  <a href="#" className={style.mobile_footer_nav_link}>
+                  </Link>
+                  <Link href="#" className={style.mobile_footer_nav_link}>
                     About Us
-                  </a>
+                  </Link>
                 </div>
                 <div className={style.mobile_footer_nav_section}>
-                  <a href="#" className={style.mobile_footer_nav_link}>
+                  <Link href="#" className={style.mobile_footer_nav_link}>
                     FAQ
-                  </a>
-                  <a href="#" className={style.mobile_footer_nav_link}>
+                  </Link>
+                  <Link href="#" className={style.mobile_footer_nav_link}>
                     Terms & Conditions
-                  </a>
-                  <a href="#" className={style.mobile_footer_nav_link}>
+                  </Link>
+                  <Link href="#" className={style.mobile_footer_nav_link}>
                     Service Request
-                  </a>
-                  <a href="#" className={style.mobile_footer_nav_link}>
+                  </Link>
+                  <Link href="#" className={style.mobile_footer_nav_link}>
                     Privacy Policy
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -175,25 +229,30 @@ const Footer = () => {
                   Al Habtoor Companies
                 </h3>
                 <div className={style.mobile_footer_companies_list}>
-                  <a href="#" className={style.mobile_footer_companies_link}>
+                  <Link href="#" className={style.mobile_footer_companies_link}>
                     Hospitality
-                  </a>
-                  <a href="#" className={style.mobile_footer_companies_link}>
+                  </Link>
+                  <Link href="#" className={style.mobile_footer_companies_link}>
                     Real Estate
-                  </a>
-                  <a href="#" className={style.mobile_footer_companies_link}>
+                  </Link>
+                  <Link href="#" className={style.mobile_footer_companies_link}>
                     Publishing
-                  </a>
-                  <a href="#" className={style.mobile_footer_companies_link}>
+                  </Link>
+                  <Link href="#" className={style.mobile_footer_companies_link}>
                     Automotive
-                  </a>
-                  <a href="#" className={style.mobile_footer_companies_link}>
+                  </Link>
+                  <Link href="#" className={style.mobile_footer_companies_link}>
                     Vehicle Leasing
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className={style.mobile_footer_security_icons}>
-                <img src="/secure-logo-mobile-footer.svg" alt="secure_lock" />
+                <Image
+                  src="/secure-logo-mobile-footer.svg"
+                  alt="secure_lock"
+                  height={17}
+                  width={17}
+                />
               </div>
               <div className={style.mobile_footer_bottom}>
                 <hr className={style.mobile_footer_divider} />
