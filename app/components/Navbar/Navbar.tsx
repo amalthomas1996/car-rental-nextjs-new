@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import style from "./Navbar.module.css";
+import Link from "next/link";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,14 +20,14 @@ const Navbar = () => {
       {/* Nav Bar */}
       <nav className={style.navbar}>
         <div className={style.logo}>
-          <a href="#">
+          <Link href="#">
             <Image
               src="/main-logo.svg"
               alt="Car Rental Logo"
               height={24}
               width={24}
             />
-          </a>
+          </Link>
         </div>
         <div
           className={`${style.hamburger} ${menuOpen ? style.menu_open : ""}`}
@@ -39,69 +40,71 @@ const Navbar = () => {
         </div>
         <ul className={style.nav_links}>
           <li>
-            <a href="#">About</a>
+            <Link href="#">About</Link>
           </li>
           <li>
-            <a href="#">Offers</a>
+            <Link href="#">Offers</Link>
           </li>
           <li>
-            <a href="#">Corporate</a>
+            <Link href="#">Corporate</Link>
           </li>
           <li>
-            <a href="#">Personal</a>
+            <Link href="#">Personal</Link>
           </li>
           <li>
-            <a href="#">Locations</a>
+            <Link href="#">Locations</Link>
           </li>
           <li>
-            <a href="#">Contact Us</a>
+            <Link href="#">Contact Us</Link>
           </li>
         </ul>
         <div className={style.right_icons}>
           <div className={style.social_icons}>
-            <a href="#">
+            <Link href="#">
               <Image
                 src="/facebook-logo.svg"
                 alt="Facebook"
                 height={16}
                 width={16}
               />
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <Image
                 src="/insta-logo.svg"
                 alt="Instagram"
                 height={16}
                 width={16}
               />
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <Image src="/x-logo.svg" alt="Twitter" height={16} width={16} />
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="#">
               <Image
                 src="/linkedin-logo.svg"
                 alt="LinkedIn"
                 height={16}
                 width={16}
               />
-            </a>
+            </Link>
           </div>
           <div className={style.profile}>
             <div className={style.notification}>
-              <Image
-                src="/notification-icon.svg"
-                alt="Notification"
-                height={24}
-                width={24}
-              />
+              <Link href="#">
+                <Image
+                  src="/notification-icon.svg"
+                  alt="Notification"
+                  height={24}
+                  width={24}
+                />
+              </Link>
               {/* for dynamic notification count */}
               {/* <span className={style.notification_count}>1</span> */}
             </div>
-            <a href="#" className={style.profile_link}>
+            <Link href="#" className={style.profile_link}>
               <div className={style.profile_icon}>J</div>
               <span className={style.profile_name}>John Doe</span>
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -112,39 +115,39 @@ const Navbar = () => {
       >
         <ul className={style.mobile_nav_links}>
           <li>
-            <a href="#" onClick={closeMenu}>
+            <Link href="#" onClick={closeMenu}>
               About Us
-            </a>
+            </Link>
           </li>
           <div className={style.mobile}></div>
           <li>
-            <a href="#" onClick={closeMenu}>
+            <Link href="#" onClick={closeMenu}>
               Offers
-            </a>
+            </Link>
           </li>
           <div className={style.mobile}></div>
           <li>
-            <a href="#" onClick={closeMenu}>
+            <Link href="#" onClick={closeMenu}>
               Corporate
-            </a>
+            </Link>
           </li>
           <div className={style.mobile}></div>
           <li>
-            <a href="#" onClick={closeMenu}>
+            <Link href="#" onClick={closeMenu}>
               Personal
-            </a>
+            </Link>
           </li>
           <div className={style.mobile}></div>
           <li>
-            <a href="#" onClick={closeMenu}>
+            <Link href="#" onClick={closeMenu}>
               Locations
-            </a>
+            </Link>
           </li>
           <div className={style.mobile}></div>
           <li>
-            <a href="#" onClick={closeMenu}>
+            <Link href="#" onClick={closeMenu}>
               Contact us
-            </a>
+            </Link>
           </li>
         </ul>
         <div className={style.login_signup_btn} onClick={closeMenu}>
